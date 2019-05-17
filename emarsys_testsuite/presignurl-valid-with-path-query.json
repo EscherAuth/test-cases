@@ -1,4 +1,5 @@
 {
+  "title": "should presign the URL properly",
   "request": {
     "method": "GET",
     "url": "https://example.com/something?foo=bar&baz=barbaz",
