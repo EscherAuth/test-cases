@@ -1,12 +1,11 @@
 {
-    "title": "should sign the request properly",
     "headersToSign": [
         "date",
         "host"
     ],
     "request": {
         "method": "GET",
-        "url": "/foo/..",
+        "url": "/?test=()",
         "headers": [
             [
                 "Date",
@@ -33,7 +32,7 @@
     "expected": {
         "request": {
             "method": "GET",
-            "url": "/foo/..",
+            "url": "/?test=%28%29",
             "headers": [
                 [
                     "Date",
@@ -45,13 +44,13 @@
                 ],
                 [
                     "Authorization",
-                    "AWS4-HMAC-SHA256 Credential=AKIDEXAMPLE/20110909/us-east-1/host/aws4_request, SignedHeaders=date;host, Signature=b27ccfbfa7df52a200ff74193ca6e32d4b48b8856fab7ebf1c595d0670a7e470"
+                    "AWS4-HMAC-SHA256 Credential=AKIDEXAMPLE/20110909/us-east-1/host/aws4_request, SignedHeaders=date;host, Signature=fc975ca905db5beb26c557e997c70b89cf19f9037fc330cda309efe0671fdfe8"
                 ]
             ],
             "body": ""
         },
-        "canonicalizedRequest": "GET\n/\n\ndate:Mon, 09 Sep 2011 23:36:00 GMT\nhost:host.foo.com\n\ndate;host\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "stringToSign": "AWS4-HMAC-SHA256\n20110909T233600Z\n20110909/us-east-1/host/aws4_request\n366b91fb121d72a00f46bbe8d395f53a102b06dfb7e79636515208ed3fa606b1",
-        "authHeader": "AWS4-HMAC-SHA256 Credential=AKIDEXAMPLE/20110909/us-east-1/host/aws4_request, SignedHeaders=date;host, Signature=b27ccfbfa7df52a200ff74193ca6e32d4b48b8856fab7ebf1c595d0670a7e470"
+        "canonicalizedRequest": "GET\n/\ntest=%28%29\ndate:Mon, 09 Sep 2011 23:36:00 GMT\nhost:host.foo.com\n\ndate;host\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stringToSign": "AWS4-HMAC-SHA256\n20110909T233600Z\n20110909/us-east-1/host/aws4_request\nf0a5df63289e8a4642792302cfdd4f0edb812a5a22e3497e809beb400c310c0a",
+        "authHeader": "AWS4-HMAC-SHA256 Credential=AKIDEXAMPLE/20110909/us-east-1/host/aws4_request, SignedHeaders=date;host, Signature=fc975ca905db5beb26c557e997c70b89cf19f9037fc330cda309efe0671fdfe8"
     }
 }

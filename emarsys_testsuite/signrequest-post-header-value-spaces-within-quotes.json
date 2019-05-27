@@ -1,4 +1,5 @@
 {
+    "title": "should sign the request properly",
     "headersToSign": [
         "a-funny-header",
         "date",

@@ -1,4 +1,5 @@
 {
+    "title": "should throw error",
     "headersToSign": [
         "date",
         "host",
