@@ -30,12 +30,12 @@
       "url": "/",
       "headers": [
         [
-          "date",
-          "Fri, 09 Sep 2011 23:36:00 GMT"
-        ],
-        [
           "host",
           "host.foo.com"
+        ],
+        [
+          "Date",
+          "Fri, 09 Sep 2011 23:36:00 GMT"
         ],
         [
           "Authorization",
