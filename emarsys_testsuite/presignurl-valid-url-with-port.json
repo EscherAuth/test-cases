@@ -1,0 +1,21 @@
+{
+  "title": "should handle URL with port properly",
+  "request": {
+    "method": "GET",
+    "url": "https://example.com:443/something?foo=bar&baz=barbaz",
+    "expires": 123456
+  },
+  "expected": {
+    "url": "https://example.com:443/something?foo=bar&baz=barbaz&X-EMS-Algorithm=EMS-HMAC-SHA256&X-EMS-Credentials=th3K3y%2F20110511%2Fus-east-1%2Fhost%2Faws4_request&X-EMS-Date=20110511T120000Z&X-EMS-Expires=123456&X-EMS-SignedHeaders=host&X-EMS-Signature=7e02b049082e74a24fe5342cf425f0eff6a8933a040b0235d9b23e3a7a01501d"
+  },
+  "config": {
+    "vendorKey": "EMS",
+    "algoPrefix": "EMS",
+    "hashAlgo": "SHA256",
+    "clockSkew": 10,
+    "credentialScope": "us-east-1/host/aws4_request",
+    "date": "2011-05-11T12:00:00Z",
+    "accessKeyId": "th3K3y",
+    "apiSecret": "very_secure"
+  }
+}
