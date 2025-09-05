@@ -1,0 +1,44 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/",
+    "headers": [
+      [
+        "host",
+        "host.foo.com"
+      ]
+    ],
+    "body": ""
+  },
+  "headersToSign": [],
+  "config": {
+    "credentialScope": "us-east-1/host/aws4_request",
+    "accessKeyId": "AKIDEXAMPLE",
+    "apiSecret": "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY",
+    "date": "2011-09-09T23:36:00.000Z"
+  },
+  "expected": {
+    "request": {
+      "method": "GET",
+      "url": "/",
+      "headers": [
+        [
+          "host",
+          "host.foo.com"
+        ],
+        [
+          "X-Escher-Date",
+          "20110909T233600Z"
+        ],
+        [
+          "X-Escher-Auth",
+          "ESR-HMAC-SHA256 Credential=AKIDEXAMPLE/20110909/us-east-1/host/aws4_request, SignedHeaders=host;x-escher-date, Signature=229f50db7e4056039951c00a70569ea1de0c212d6708d15ace7bebcbc9d1adbb"
+        ]
+      ],
+      "body": ""
+    },
+    "canonicalizedRequest": "GET\n/\n\nhost:host.foo.com\nx-escher-date:20110909T233600Z\n\nhost;x-escher-date\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stringToSign": "ESR-HMAC-SHA256\n20110909T233600Z\n20110909/us-east-1/host/aws4_request\n5c8b460a6f5a1a2029a8d2744916af2168f3589cb08abd9da17892bfd7d1e950",
+    "authHeader": "ESR-HMAC-SHA256 Credential=AKIDEXAMPLE/20110909/us-east-1/host/aws4_request, SignedHeaders=host;x-escher-date, Signature=229f50db7e4056039951c00a70569ea1de0c212d6708d15ace7bebcbc9d1adbb"
+  }
+}

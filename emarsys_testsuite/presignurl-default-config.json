@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://example.com/something",
+    "expires": 123456
+  },
+  "expected": {
+    "url": "https://example.com/something?X-Escher-Algorithm=ESR-HMAC-SHA256&X-Escher-Credentials=th3K3y%2F20110511%2Fus-east-1%2Fhost%2Faws4_request&X-Escher-Date=20110511T120000Z&X-Escher-Expires=123456&X-Escher-SignedHeaders=host&X-Escher-Signature=12268227c90420ac3f1978980e813fe9b8cc1fb4eba52411fd861b2acde67dfb"
+  },
+  "config": {
+    "clockSkew": 10,
+    "credentialScope": "us-east-1/host/aws4_request",
+    "date": "2011-05-11T12:00:00Z",
+    "accessKeyId": "th3K3y",
+    "apiSecret": "very_secure"
+  }
+}
